@@ -1,0 +1,7 @@
+gesdinet_jwt_refresh_token:
+    path:     /token/refresh
+    defaults: { _controller: gesdinet.jwtrefreshtoken::refresh }
+
+login_check:
+    path:     /api/login_check
+    methods: [POST]

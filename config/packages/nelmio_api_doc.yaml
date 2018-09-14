@@ -4,6 +4,27 @@ nelmio_api_doc:
             title: My App
             description: This is an awesome app!
             version: 1.0.0
+            api_key:
+              type: apiKey
+              name: api_key
+              in: header
+            security:
+              api_key: [session]
+
+        definitions:
+            NelmioImageList:
+                description: "Response for some queries"
+                type: object
+                properties:
+                    total:
+                        type: integer
+                        example: 42
+                    items:
+                        type: array
+                        items:
+                            $ref: "#/definitions/ImageMetadata"
+
     areas: # to filter documented areas
         path_patterns:
             - ^/api(?!/doc$) # Accepts routes under /api except /api/doc
+
